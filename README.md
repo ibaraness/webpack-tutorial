@@ -8,6 +8,8 @@ As we all know Webpack is a JavaScript bundler, which means that it allows us to
 
 I'll be using ES6 import and export syntax for importing modules. Import and Export statements are what we are using to connect different parts of the codes together. Each part of the code being exported or imported by webpack refered to as a module. So we are importing different modules that in the end will be bundled together as one or more files.
 
+[![N|webpack basic file bundling](basic1.png)]
+
 
 ###### Lets see a simple example:
 File: greetings.js
@@ -15,6 +17,8 @@ File: greetings.js
 export function getGreetings(name){
     return "Hello " + name + ", have a nice day"
 }
+
+export const unusedConstant = 'unused';
 ```
 
 File: entry.js
@@ -33,7 +37,7 @@ module.exports = {
   }
 };
 ```
-The generated 'bundle.js' file will contain all the code from both files:
+The generated 'bundle.js' file will contain only the code we've imported from both files:
 ```javascript
 function getGreetings(name){
     return "Hello " + name + ", have a nice day"
