@@ -1,5 +1,7 @@
 # webpack-tutorial
-A simple guide to using Webpack with different frameworks
+### A simple guide to using Webpack with different frameworks
+
+If you don't know how to set a basic webpack environment, here is a [basic guide](basic-setting.md) for setting webpack envorenment on your machine
 
 As we all know Webpack is a JavaScript bundler, which means that it allows us to use multiple files on development environment to be later bundled to one or more javascript files (On production or dev-server). As I’ve said before in it’s mots basic form, Webpack is nothing more than a JavaScript bundler. 
 
