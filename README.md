@@ -1,14 +1,14 @@
 # webpack-tutorial
 ### A simple guide to using Webpack with different frameworks
 
-If you don't know how to set a basic webpack environment, here is a [basic guide](basic-setting.md) for setting webpack envorenment on your machine
-
 As we all know Webpack is a JavaScript bundler, which means that it allows us to use multiple files on development environment to be later bundled to one or more javascript files (On production or dev-server). As I’ve said before in it’s mots basic form, Webpack is nothing more than a JavaScript bundler. 
 
 ##### from webpack docs:
 >At its core, webpack is a static module bundler for modern JavaScript applications. When webpack processes your application, it recursively builds a dependency graph that includes every module your application needs, then packages all of those modules into one or more bundles."
 
 I'll be using ES6 import and export syntax for importing modules. Import and Export statements are what we are using to connect different parts of the codes together. Each part of the code being exported or imported by webpack refered to as a module. So we are importing different modules that in the end will be bundled together as one or more files.
+
+_If you don't know how to set a basic webpack environment, here is a [basic guide](basic-setting.md) for setting webpack envorenment on your machine_
 
 [![N|webpack basic file bundling](basic1.png)]
 
