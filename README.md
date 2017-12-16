@@ -47,11 +47,15 @@ module.exports = {
   }
 };
 ```
-The generated 'bundle.js' file will contain only the code we've imported from both files:
+The generated 'bundle.js' file will contain the code we've imported from both files:
 ```javascript
 function getGreetings(name){
     return "Hello " + name + ", have a nice day"
 }
+/* Notice that in the basic version unused code can get imported as well
+   Tree-shaking technic can be set using UglifyJS plugin (next section) */
+var unusedConstant = 'unused'; 
+
 var greetIdan = getGreetings('Idan'); /* returns: Hello Idan, have a nice day */
 ```
 ### Loaders
