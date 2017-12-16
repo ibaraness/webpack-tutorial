@@ -8,7 +8,7 @@ As we all know Webpack is a JavaScript bundler, which means that it allows us to
 
 I'll be using ES6 import and export syntax for importing modules. Import and Export statements are what we are using to connect different parts of the codes together. Each part of the code being exported or imported by webpack refered to as a module. So we are importing different modules that in the end will be bundled together as one or more files.
 
-_If you don't know how to set a basic webpack environment, here is a [basic guide](basic-setting.md) for setting webpack envorenment on your machine_
+**If you need help on setting a basic webpack environment on your local machine, here is a [basic guide](basic-setting.md) for doing just that**
 
 [![N|webpack basic file bundling](basic1.png)]
 
