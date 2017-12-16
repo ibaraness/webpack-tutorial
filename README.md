@@ -1,7 +1,15 @@
 # webpack-tutorial
 ### A simple guide to using Webpack with different frameworks
 
-As we all know Webpack is a JavaScript bundler, which means that it allows us to use multiple files on development environment to be later bundled to one or more javascript files (On production or dev-server). As I’ve said before in it’s mots basic form, Webpack is nothing more than a JavaScript bundler. 
+On this page I'll explain the general concepts and configuration options used by webpack:
+* Basic configuration: enrty file and output bundle file
+* Loaders: Loading more than just plain JavaScript files
+* Plugins: Extending webpack capabilities more
+* Local server: Using webpack-dev-server package to create a local server
+
+**What is webpack?**
+
+As we all know Webpack is a JavaScript bundler, which means that it allows us to use multiple files on development environment to be later bundled to one or more javascript files (On production or dev-server). As I’ve said before in it’s mosts basic form, Webpack is nothing more than a JavaScript bundler. 
 
 ##### from webpack docs:
 >At its core, webpack is a static module bundler for modern JavaScript applications. When webpack processes your application, it recursively builds a dependency graph that includes every module your application needs, then packages all of those modules into one or more bundles."
@@ -46,8 +54,9 @@ function getGreetings(name){
 }
 var greetIdan = getGreetings('Idan'); /* returns: Hello Idan, have a nice day */
 ```
-### Loading more than just plain JavaScript files
-Usually we'll want to use and import more than just plain JavaScript files in our projects, that is where **loaders** come in play. Like I've said before, Weback in it's core is just a plain JavaScript bundler, it can't import or understand other types of files. Using **loaders** we are able to tell webpack how to interpret and import other type of files.
+### Loaders
+#### Loading more than just plain JavaScript files
+Usually we'll want to use and import more than just plain JavaScript files in our projects, that is where **loaders** come in to play. Like I've said before, Weback in it's core is just a plain JavaScript bundler, it can't import or understand other types of files. Using **loaders** we are able to tell webpack how to interpret and import other type of files.
 
 ##### from webpack docs:
 #
