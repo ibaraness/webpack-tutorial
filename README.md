@@ -6,6 +6,7 @@ On this page I'll explain the general concepts and configuration options used by
 * Loaders: Loading more than just plain JavaScript files
 * Plugins: Extending webpack capabilities more
 * Local server: Using webpack-dev-server package to create a local server
+* Next part: Webpack and Angular4 configuration
 
 **What is webpack?**
 
@@ -52,8 +53,8 @@ The generated 'bundle.js' file will contain the code we've imported from both fi
 function getGreetings(name){
     return "Hello " + name + ", have a nice day"
 }
-/* Notice that in the basic version unused code can get imported as well
-   Tree-shaking technic can be set using UglifyJS plugin (next section) */
+/* Notice that in the basic version unused code can get imported as well.
+   Tree-shaking (Removing unused code) can be set using UglifyJS plugin (next section) */
 var unusedConstant = 'unused'; 
 
 var greetIdan = getGreetings('Idan'); /* returns: Hello Idan, have a nice day */
@@ -126,3 +127,39 @@ The first loader is used to create an inline **style** element in the DOM for ev
 
 There are different types of loaders that can do different type of things, check webpack loaders page:
 https://webpack.js.org/loaders/
+
+### Plugins
+#### Extending webpack capabilities a little more
+
+Plugins allow us to do a lot of things unnecessarily related to the modules we are using, like setting the output HTML file, limiting the chunk file size and much more.   
+
+###### From webpack docs:
+>While loaders are used to transform certain types of modules, plugins can be leveraged to perform a wider range of tasks. Plugins range from bundle optimization and minification all the way to defining environment-like variables. The plugin interface is extremely powerful and can be used to tackle a wide variety of tasks.
+
+One of the most common plugins we'll often see in different webpack configuration files is 'HtmlWebpackPlugin'. We can use it in our app to automatically inject the bundle file into our HTML file.
+
+```javascript
+const path = require('path');
+
+const config = {
+  entry: './path/to/my/entry/file.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'my-first-webpack.bundle.js'
+  },
+  module: {
+    rules: [
+      { test: /\.txt$/, use: 'raw-loader' }
+    ]
+  },
+  plugins: [
+    /**
+     * Correctly inject complied budle JS files to HTML
+     */
+    new HtmlWebpackPlugin({
+        template: "index.html",
+        inject: "body",
+    })
+  ]
+};
+```
