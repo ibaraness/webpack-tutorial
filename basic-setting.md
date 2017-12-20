@@ -33,7 +33,27 @@ Now, it's time to install Webpack and add it to our development dependencies
 npm install --save-dev webpack
 ```
 
-#### Next step
+Now lets prepare the file structure for our app:
+*You can follow my recommendation or set your own structure*
+
+```
+webpack-project
+      |
+      node_modules (crated automatically on modules install using npm)
+      package.json (Created automatically using npm init)
+      webpack.config.js (will be created next)
+      src--
+          |
+          index.html (will be created next)
+          style.css (will be created next)
+          app--
+              |
+              entry.js (will be created next)
+              greeting.js (will be created next)
+        
+```
+
+#### Second step
 
 After webpack is installed, we can start creating the files we will be needing for our web project to work:
 
@@ -67,16 +87,23 @@ Lets Start from writnig our index.html file.
 </html>
 ```
 
-Next we'll create our greeting and entry JavaScript files
+Next we'll create our greeting.js and entry.js files.
 
 ###### entry.js
 ```javascript
 import {greeting} from './greeting';
 
-var greetMessage = greeting("App");
+var greetMessage = greeting("Idan");
 
 document.addEventListener("DOMContentLoaded", function(event) {
   document.querySelector('.app-title').innerHTML = greetMessage;
 });
+
+```
+###### greeting.js
+```javascript
+export function greeting(name){
+  return "Hello, " + name;
+}
 
 ```
