@@ -107,3 +107,29 @@ export function greeting(name){
 }
 
 ```
+The last file we going to create on this step is webpack.configure.js. Wearegoing to start with a very basic and simple configuration and extend it as we go.
+
+###### webpack.configure.js
+```javascript
+module.exports = {
+
+      /* This is where we add our entry file, from which the bundle is going to be created */
+      entry: './src/app/entry.js',
+      
+      /* This is where we et the name and location of the bundle file */
+      output: {
+            filename: 'bundle.js'
+      }
+};
+```
+
+After all files are created it's time to add a script to our package. Open package.json file, in "scripts", remove 'test' and add 'build' object instead of it like so:
+
+```javascript
+{
+      ...
+       "test": "echo \"Error: no test specified\" && exit 1", --> remove this line
+       "build": "webpack"
+      ...
+}
+```
