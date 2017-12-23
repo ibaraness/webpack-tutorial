@@ -25,7 +25,7 @@ Next, inside that folder lets create a new NPM package for our project using 'np
 $ npm init
 ```
 When npm will ask you for a name, you can enter any url friendly name like 'webpack-project' or so. 
-press enter for the rest of options npm gives you. When you're done you should have a **package.json** file on the folder.
+Press the 'enter' key for the rest of the options npm asks you about. When you're done you should have a **package.json** file on the folder.
 
 Now, it's time to install Webpack and add it to our development dependencies
 
