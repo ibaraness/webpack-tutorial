@@ -63,7 +63,7 @@ After webpack is installed, we can start creating the files we will be needing f
 * webpack.config.js
 
 
-Lets Start from writnig our index.html file.
+Lets Start from writnig our index.html file. Lets created index.html in the 'src' folder we've created before.  
 
 
 ###### Index.html 
@@ -87,7 +87,7 @@ Lets Start from writnig our index.html file.
 </html>
 ```
 
-Next we'll create our greeting.js and entry.js files.
+Next we'll create our greeting.js and entry.js files. Let create the JavaScript files in the following path 'src/app/'. 
 
 ###### entry.js
 ```javascript
@@ -107,7 +107,7 @@ export function greeting(name){
 }
 
 ```
-The last file we going to create on this step is webpack.configure.js. Wearegoing to start with a very basic and simple configuration and extend it as we go.
+The last file we going to create on this step is webpack.configure.js. We are going to start with a very basic and simple configuration and extend it as we go. Lets create it in the root folder of our project where package.json file and node_modules folder sits.
 
 ###### webpack.configure.js
 ```javascript
