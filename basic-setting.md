@@ -63,7 +63,7 @@ After webpack is installed, we can start creating the files we will be needing f
 * webpack.config.js
 
 
-Lets Start from writnig our index.html file. Lets created index.html in the 'src' folder we've created before.  
+Lets Start from writnig our index.html file. Create index.html in the 'src' folder we've created before.  
 
 
 ###### Index.html 
@@ -77,7 +77,7 @@ Lets Start from writnig our index.html file. Lets created index.html in the 'src
   <meta content="IE=edge" http-equiv="X-UA-Compatible" />
   <title>My App</title>
   <!--[ We will load webpack bundle file here ]-->
-  <script src="bundle.js"></script>
+  <script src="./../bundle.js"></script>
 </head>
 
 <body>
