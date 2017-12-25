@@ -189,8 +189,12 @@ export function greeting(name){
 }
 ```
 
-If our watch script is still running, we can refresh the browser and see that the message was changed from 'Hello, Idan' to 'Hello, Idan, How are you?'. Watching changes is great but what if we could refresh the page on each change on our app? We can do just that using 'webpack-dev-server'.
+If our watch script is still running, we can refresh the browser and see that the message was changed from 'Hello, Idan' to 'Hello, Idan, How are you?'. Watching changes is great but what if we could get our page to automatically refresh itself on each change on our app? We can do just that using 'webpack-dev-server'.
 
 #### Installing webpack development server
+```
+npm install webpack-dev-server --save-dev
+```
+
 
 
