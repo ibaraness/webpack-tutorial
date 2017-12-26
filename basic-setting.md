@@ -5,13 +5,13 @@ In this guide we'll be creating a working Webpack environment from scratch. Our 
 **We will do the following steps:**
 * **First step:** Creating project folder and installing webpack.
 * **Second step:** Creating the files for our application.
-* **Third step:** Installing webpack development server
+* **Third step:** Installing webpack development server.
 * **Forth step:** Configuring our app a little more with loaders and plugins.
 
 _Before we begin, it's important that you'll have [NodeJS](https://nodejs.org/) and [NPM](https://www.npmjs.com/
 ) installed on your machine:_
 
-#### First step
+#### First step - Creating project folder and installing webpack
 
 Lets create a new folder we want our project to be in, like 'webpack-project' and navigate to it like so:
 
@@ -53,7 +53,7 @@ webpack-project
         
 ```
 
-#### Second step
+#### Second step - Creating the files for our application
 
 After webpack is installed, we can start creating the files we will be needing for our web project to work:
 
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 ###### greeting.js
 ```javascript
 export function greeting(name){
-  return "Hello, " + name;
+  return "Hello " + name;
 }
 
 ```
@@ -191,10 +191,42 @@ export function greeting(name){
 
 If our watch script is still running, we can refresh the browser and see that the message was changed from 'Hello, Idan' to 'Hello, Idan, How are you?'. Watching changes is great but what if we could get our page to automatically refresh itself on each change on our app? We can do just that using 'webpack-dev-server'.
 
-#### Installing webpack development server
+#### Third step - Installing webpack development server.
 ```
 npm install webpack-dev-server --save-dev
 ```
 
+Webpack-dev-server will let us watch and refresh the page for every change we do by crating a node server on our machine.
+After installing webpack-dev-server, it's time to add a new script on our package. Open package.json in any text editor and add another script:
+```javascript
+{
+      ...
+       "build": "webpack",
+       "watch": "webpack --watch",
+       "server": "webpack-dev-server --open"
+      ...
+}
+```
+Webpack-dev-server will use webpack configuration to create a local node server. If we'll try to run the script now using 'npm run server' in the terminal, the browser won't open find index.html file, because it will look for it in the root folder. In order to point webpack-dev-server to the correct path, we have to set in in our webpack.config.js. Open webpack.config.js in any text editor and add the following:
 
+```javascript
+module.exports = {
+
+      /* This is where we add our entry file, from which the bundle is going to be created */
+      entry: './src/app/entry.js',
+      
+      /* This is where we et the name and location of the bundle file */
+      output: {
+            filename: 'bundle.js'
+      },
+      /* -------> Our webpack-dev-server settings */
+      devServer:{
+            /* Here we should set the path we wan't our server to run from */
+		contentBase:'src/'
+	}
+};
+```
+Now if we'll try to run the script, the page that is going to be open should display our index.html file correctly. Basically, if what we want is only to budle our javascript files together, we are done. But what if wan't to get a little more from our app, that is where loaders and plugins can help us.
+
+#### Forth step - Configuring our app a little more with loaders and plugins.
 
