@@ -226,7 +226,34 @@ module.exports = {
 	}
 };
 ```
-Now if we'll try to run the script, the page that is going to be open should display our index.html file correctly. Basically, if what we want is only to budle our javascript files together, we are done. But what if wan't to get a little more from our app, that is where loaders and plugins can help us.
+Now if we'll try to run the script, the page that is going to be open should display our index.html file correctly. Basically, if what we want is only to budle our javascript files together, we are done. But what if want to get a little more from our app, that is where loaders and plugins can help us.
 
 #### Forth step - Configuring our app a little more with loaders and plugins.
 
+The first thing we will want to do with any app is set a distribution folder where all of our distributed files should be in, like our bundle.js and index.html files, and maybe some other files we'll want to add like styles and assets. Lets change our webpack.config.js to create our bundle.js in a 'dist' folder:
+
+```javascript
+/* First lets import node 'path' Node module */
+const path = require('path');
+
+module.exports = {
+
+      /* This is where we add our entry file, from which the bundle is going to be created */
+      entry: './src/app/entry.js',
+      
+      /* This is where we et the name and location of the bundle file */
+      output: {
+      		/* 
+		   path.resolve method resolves a sequence of paths or path segments into an absolute path,
+		   __dirname variable gives us current folder name. */
+      		path: path.resolve(__dirname, 'dist')
+      		filename: 'bundle.js'
+      },
+      devServer:{
+            /* Here we should set the path we wan't our server to run from */
+		contentBase:'src/'
+	}
+};
+```
+
+We are not done just yet. We want our index.html to be served from 'dist' folder as well.
