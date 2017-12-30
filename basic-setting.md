@@ -37,16 +37,16 @@ Now lets prepare the file structure for our app:
 *You can follow my recommendation or set your own structure*
 
 ```
-webpack-project
+[root directory](webpack-project)
       |
-      node_modules (crated automatically on modules install using npm)
-      package.json (Created automatically using npm init)
+      node_modules (Will be created automatically on modules install using npm)
+      package.json (Will be created automatically using npm init)
       webpack.config.js (will be created next)
-      src--
+      [src]--
           |
           index.html (will be created next)
           style.css (will be created next)
-          app--
+          [app]--
               |
               entry.js (will be created next)
               greeting.js (will be created next)
