@@ -43,13 +43,13 @@ Now lets prepare the file structure for our app:
       package.json (Will be created automatically using npm init)
       webpack.config.js (will be created next)
       [src]--
-          |
-          index.html (will be created next)
-          style.css (will be created next)
-          [app]--
-              |
-              entry.js (will be created next)
-              greeting.js (will be created next)
+            |
+            index.html (will be created next)
+            style.css (will be created next)
+            [app]--
+                  |
+                  entry.js (will be created next)
+                  greeting.js (will be created next)
         
 ```
 
