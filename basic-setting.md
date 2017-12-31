@@ -22,7 +22,7 @@ $ cd webpack-project
 
 Next, inside that directory lets create a new NPM package for our project using 'npm init':
 ```
-$ npm init
+$ npm init -y
 ```
 When npm will ask you for a name, you can enter any url friendly name like 'webpack-project' or so. 
 Press the 'enter' key for the rest of the options npm asks you about. When you're done you should have a **package.json** file on the directory.
