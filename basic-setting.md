@@ -45,7 +45,6 @@ Now lets prepare the file structure for our app:
       [src]--
             |
             index.html (will be created next)
-            style.css (will be created next)
             [app]--
                   |
                   entry.js (will be created next)
